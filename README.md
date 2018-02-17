@@ -34,6 +34,6 @@ open the detail page of any candidate and go to lower section. realtime analytic
 	4	Edit project and commit in your local repo
 	5.	sync the changes with your remote repo
 	6.	Go to Github website there you will find compare and pull-request near new branch added message
-	7.	If you still didn't get it follow this url: [Click me](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267)
+	7.	If you still didn't get it follow this url [https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267]
 	8.	Bingo! you did it, yeah....	
  
