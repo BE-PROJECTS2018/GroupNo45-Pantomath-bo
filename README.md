@@ -1,4 +1,4 @@
-use xampp
+# use xampp
 
 import that database file in database folder
 
@@ -25,3 +25,4 @@ open the detail page of any candidate and go to lower section. realtime analytic
 
 future update:
 	analytic area doesn't fit good as graph need to be static there and types of graph are pending	
+ 
