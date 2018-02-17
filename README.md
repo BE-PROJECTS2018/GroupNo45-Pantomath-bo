@@ -24,5 +24,15 @@ serverScript/class folder
 open the detail page of any candidate and go to lower section. realtime analytics are viewable
 
 # future update:
-	analytic area doesn't fit good as graph need to be static there and types of graph are pending	
+	analytic area doesn't fit good as graph need to be static there and types of graph are pending
+
+
+# Instruction for How to Contribute ?
+	1.	Fork the project to your git remote project repo
+	2.	Clone project to your local repo
+	3.	Create new branch so that you can track both edited and original code
+	4	Edit project and commit in your local repo
+	5.	sync the changes with your remote repo
+	6.	Go to Github website there you will find compare and pull-request near new branch added message
+	7.	Bingo! you did it, yeah....	
  
