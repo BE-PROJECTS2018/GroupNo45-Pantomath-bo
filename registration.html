@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/mainstyle.css" >
     <link rel="stylesheet" href="./css/fontawesome.css" >
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/registration/registration.css">
     <script src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
@@ -90,29 +91,12 @@
 
                         
                     </header>
-                    <!--
-                    <div class="post-description">
-                       
-                        <div class="list">
-                                <ul class="quantity-list">
-                                    <li class="quantity-item">
-                                        Number of interviews:&nbsp;&nbsp;
-                                        <h2 class="quantity-item"><?php echo $num_total[0]["num"];?></h2>
-                                    </li>
-                                    <li class="quantity-item">
-                                        Number of interviews conducted:&nbsp;&nbsp;
-                                        <h2 class="quantity-item"><?php echo $num_conducted[0]["num"];?></h2>
-                                    </li>
-                                </ul>
-                            </div>
-                    </div>
-                -->
                 </section>
                 <section>
                     <div class="container">  
                         <form id="contact" action="" method="post">
-                          <h3>Candidate Registration Form</h3>
-                          <h4>One Step toward success ...</h4>
+                          <h3>Candidate Registration</h3>
+                          <h4 style="float:right">One Step toward success ...</h4>
                           
                           <fieldset>
                             <input placeholder="First Name" type="text" tabindex="1" required autofocus>
@@ -123,7 +107,7 @@
                           </fieldset>
 
                           <fieldset>
-                            <input placeholder="Age" type="Number" tabindex="3" required autofocus>
+                            <input placeholder="Age" type="Number" tabindex="3" required min=18 autofocus>
                           </fieldset>
                           
                           <fieldset>
