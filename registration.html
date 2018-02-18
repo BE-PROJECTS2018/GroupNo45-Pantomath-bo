@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="./css/fontawesome.css" >
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/registration/registration.css">
-    <script src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
@@ -28,11 +29,7 @@
             <link rel="stylesheet" href="css/layouts/blog.css">
         <!--<![endif]-->
 </head>
-<body onload="startTime()">
-
-
-
-
+<body>
 
 
 
@@ -43,7 +40,8 @@
             <h2 class="brand-tagline">Discover Cross Model Behavior Analysis</h2>
             <hr>
             <h3>New Generation Intelligent System</h3>
-            
+            <br>
+            <p class="copyright">Designed by <a href="#" target="_blank" title="Colorlib">Pantomath Team</a></p>
                 
             </nav>
         </div>
@@ -56,35 +54,6 @@
             <div class="posts">
                 <h1 class="content-subhead">Welcome to Online Interview</h1>
 
-                <!-- A single blog post -->
-                <!--
-                <section class="post">
-                    <header class="post-header">
-                       
-                        <script>
-                            function startTime() {
-                                var today = new Date();
-                                var h = today.getHours();
-                                var m = today.getMinutes();
-                                var s = today.getSeconds();
-                                m = checkTime(m);
-                                s = checkTime(s);
-                                document.getElementById('txt').innerHTML =
-                                h + ":" + m + ":" + s;
-                                var t = setTimeout(startTime, 500);
-                            }
-                            function checkTime(i) {
-                                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-                                return i;
-                            }
-                            </script>
-                                
-                        <h2 class="post-title">Time <div id="txt"></div></h2>
-
-                        
-                    </header>
-                </section> 
-            -->
                 <section>
                     <div class="container">  
                         <form id="contact" action="" method="post">
@@ -123,9 +92,41 @@
                             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
                           </fieldset>
 
-                          <p class="copyright">Designed by <a href="#" target="_blank" title="Colorlib">Pantomath Team</a></p>
+                          <h6>Already Registered <a href="#" title="Login" id="myBtn">Login</a></h6>
                         </form>
                       </div>
+                </section>
+                <section>
+                    <div class="container">
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Modal Header</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    <p>Some text in the modal.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                            
+                    </div>
+                    <script>
+                            $(document).ready(function(){
+                                $("#myBtn").click(function(){
+                                    $("#myModal").modal();
+                                });
+                            });
+                    </script>                           
                 </section>
             </div>
         </div>
