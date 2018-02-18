@@ -12,7 +12,8 @@ serverScript/class folder
 	type: localhost/front-end/  in address bar
 
 # update:
-
+	-One page Added
+		-login and register UI
 	-two pages are added
 		- candidate list view of those who have given the interview with ranking
 		- detail of the candidate is avaiable with the feature parameter
