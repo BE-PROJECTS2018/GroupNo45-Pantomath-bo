@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="./css/fontawesome.css" >
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/registration/registration.css">
+    <link rel="stylesheet" href="./css/registration/modal.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/registration/modal.js"></script>
     
     
     <!--[if lte IE 8]>
@@ -55,8 +57,8 @@
                 <h1 class="content-subhead">Welcome to Online Interview</h1>
 
                 <section>
-                    <div class="container">  
-                        <form id="contact" action="" method="post">
+                    <div class="container" id="register">  
+                        <form id="contact" action="./register.php" method="post">
                           <h3>Candidate Registration</h3>
                           <h4 style="float:right">One Step toward success ...</h4>
                           
@@ -92,41 +94,42 @@
                             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
                           </fieldset>
 
-                          <h6>Already Registered <a href="#" title="Login" id="myBtn">Login</a></h6>
+                          <h6>Already Registered <a href="#" id="login-trigger">Login</a></h6>
                         </form>
+                    
                       </div>
-                </section>
-                <section>
-                    <div class="container">
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
-                                <div class="modal-dialog">
-                                
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Modal Header</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                    <p>Some text in the modal.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                            
-                    </div>
-                    <script>
-                            $(document).ready(function(){
-                                $("#myBtn").click(function(){
-                                    $("#myModal").modal();
+
+                      <div class="container" id ="login">  
+                            <form id="contact" action="./login.php" method="post">
+                              <h3>Candidate Login</h3>
+                              <h4 style="float:right">One Step toward success ...</h4>
+                              
+                              
+                              <fieldset>
+                                <input placeholder="Email Address" type="email" tabindex="6" required>
+                              </fieldset>
+                                                     
+                              <fieldset>
+                                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                              </fieldset>
+    
+                              <h6>New Candidate <a href="#" id = "register-trigger">Register</a></h6>
+                            </form>
+                          </div>
+                          <script>
+                              $(document).ready(function(){
+                                    $("#register").hide();
+
+                                    $("#login-trigger").click(function(){
+                                        $("#register").hide();
+                                        $("#login").show();
+                                    });
+                                    $("#register-trigger").click(function(){
+                                        $("#login").hide();
+                                        $("#register").show();
+                                    });
                                 });
-                            });
-                    </script>                           
+                          </script>
                 </section>
             </div>
         </div>

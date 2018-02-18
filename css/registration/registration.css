@@ -11,6 +11,10 @@
   text-rendering: optimizeLegibility;
 }
 
+body{
+  background-color:#43A047;
+}
+
 .container {
   max-width:50%;
   width: 100%;
