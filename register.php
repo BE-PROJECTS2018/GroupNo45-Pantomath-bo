@@ -74,10 +74,10 @@
 
         $res = $db->getResult();
         $db->disconnect();
-        $error=false;
+        $error="false";
         if(strlen($res[0][0] . "")>2){
             //echo 'Some Error Occured';
-            $error=true;
+            $error="true";
         }
 
         echo '<script type="text/javascript">

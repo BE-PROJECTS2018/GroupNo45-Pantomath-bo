@@ -1,3 +1,19 @@
+<?php
+    if(isset($_GET["error"])){
+        $error = $_GET["error"];
+
+        if($error == "true"){
+            echo '<script type="text/javascript">
+                        alert("Error Occur: It looks Like you have already registered!");
+                    </script>';
+        }else{
+            echo '<script type="text/javascript">
+                        alert("Login to continue..");
+                    </script>';
+        }
+    }
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
