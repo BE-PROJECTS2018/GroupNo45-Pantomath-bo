@@ -137,6 +137,7 @@
 
                                         Webcam.reset();
                                     });
+
                                     $("#register-trigger").click(function(){
                                         $("#login").hide();
                                         $("#register").show();
@@ -152,8 +153,6 @@
                                     });
                                 });
                           
-                                
-    
                             //<!-- Code to handle taking the snapshot and displaying it locally -->
     
                                 var img_data = "";
@@ -164,7 +163,7 @@
                                     Webcam.snap( function(data_uri) {
                                         // display results in page
                                         document.getElementById('results').innerHTML = 
-                                            '<h2>Here is your image:</h2>' + 
+                                            '<h6>Here is your image:</h6>' + 
                                             '<img src="'+data_uri+'"/>';
                                             img_data=data_uri;
                                     } );
