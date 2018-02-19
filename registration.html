@@ -98,6 +98,8 @@
                           <fieldset>
                             <input placeholder="Phone Number" type="tel" tabindex="7" required autofocus="">
                           </fieldset>
+
+                          <input type="hidden" name="image_data" value="" id="image_data"/>
                                                  
                           <fieldset>
                             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
@@ -126,6 +128,7 @@
                             </form>
                           </div>
                           <script>
+                              var click=0;
                               $(document).ready(function(){
                                     $("#register").hide();
                                     $("#register-photo").hide();
@@ -156,9 +159,9 @@
                             //<!-- Code to handle taking the snapshot and displaying it locally -->
     
                                 var img_data = "";
-                                var flag = false;
     
                                 function take_snapshot() {
+                                    click++;
                                     // take snapshot and get image data
                                     Webcam.snap( function(data_uri) {
                                         // display results in page
@@ -170,13 +173,17 @@
                                 }
     
                                 function photo_done(){
-                                    $("#my_camera").remove();
-                                    $("#cam_btn").remove();
+                                    if(click>0){
+                                        $("#my_camera").remove();
+                                        $("#cam_btn").remove();
 
-                                    document.getElementById('results').innerHTML = 
-                                            '<img src="'+img_data+'"/>';
-                                    Webcam.reset();
-                                    flag = true;
+                                        document.getElementById('results').innerHTML = 
+                                                '<img src="'+img_data+'"/>';
+                                        Webcam.reset();
+                                        $("#image_data").val(""+img_data);
+                                    }else{
+                                        alert("Please Capture Image");
+                                    }
                                 }
                             </script>
                 </section>
