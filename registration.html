@@ -88,7 +88,14 @@
                           </fieldset>
 
                           <fieldset>
-                            <input name="stream" placeholder="Stream" type="text" tabindex="5" required autofocus>
+                            <input name="degree" placeholder="Degree" type="text" tabindex="5" required autofocus>
+                          </fieldset>
+                          <fieldset>
+                                <input name="stream" placeholder="Stream" type="text" tabindex="5" required autofocus>
+                          </fieldset>
+
+                          <fieldset>
+                                <input name="experience" placeholder="Experience(years)" type="number" tabindex="5" required autofocus>
                           </fieldset>
 
                           <fieldset>
@@ -98,6 +105,11 @@
                           <fieldset>
                             <input name="phone" placeholder="Phone Number" type="tel" tabindex="7" required autofocus="">
                           </fieldset>
+
+                          <fieldset>
+                                <button style="display:block;width:120px; height:30px;" onclick="document.getElementById('getFile').click()">Upload Resume</button>
+                                <input name="resume" type="file" id="getFile" style="display:none;padding:2px;" accept=".pdf" tabindex="5" required autofocus>
+                            </fieldset>
 
                           <input type="hidden" name="image_data" value="" id="image_data"/>
                                                  
