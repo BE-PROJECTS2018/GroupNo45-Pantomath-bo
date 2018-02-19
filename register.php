@@ -74,6 +74,7 @@
 
         $res = $db->getResult();
         $db->disconnect();
+        
         $error="false";
         if(strlen($res[0][0] . "")>2){
             //echo 'Some Error Occured';

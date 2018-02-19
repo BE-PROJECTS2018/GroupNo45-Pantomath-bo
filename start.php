@@ -72,7 +72,7 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a class="pure-button" href="./index.php">Interview Info</a>
+                        <a class="pure-button" href="./start.php">Interview Info</a>
                     </li>
                     <li class="nav-item">
                         <a class="pure-button" href="./list.php">List of Candidates</a>
