@@ -26,13 +26,7 @@
 
     <!-- JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/bower_components/rickshaw/vendor/d3.min.js"></script>
-    <script type="text/javascript" src="./js/bower_components/rickshaw/vendor/d3.layout.min.js"></script>
-    <script type="text/javascript" src="./js/bower_components/rickshaw/rickshaw.min.js"></script>
-    <script type="text/javascript" src="./js/plot/Rickshaw.Series.Sliding.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://d3js.org/d3.v2.js"></script>
-    <script type="text/javascript" src="./js/webcam/webcam.min.js"></script>
     
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
