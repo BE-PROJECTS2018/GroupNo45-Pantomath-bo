@@ -11,5 +11,21 @@
 <body>
     <button id="start" >start process</button>
     <button id="stop">stop process</button>
+    <div id="log">Here you log comes</div>
 </body>
+<script>
+    $(document).ready(function(){
+        $("#start").click(function(){
+            $.get("driver.php",{"id":1},function(data) {
+                $("#log").append("<br><p>" + data + "</p>");
+            });
+        });
+
+        $("#stop").click(function(){
+            $.get("driver.php",{"id":2},function(data) {
+                $("#log").append("<br><p>" + data + "</p>");
+            });
+        });
+    });
+</script>
 </html>
