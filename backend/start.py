@@ -11,6 +11,8 @@ import pandas as pd
 import cv2
 import dlib
 import json
+from audio import audio_processing
+from analysis import predict
 
 #######################################
 t = 0
@@ -116,4 +118,10 @@ def start(file):
 
 #log file is the heart
 file=Path("log.txt")
+
+#start realtime video
 start(file)
+
+#start audio processing
+audio_processing.start_audio(file)
+
