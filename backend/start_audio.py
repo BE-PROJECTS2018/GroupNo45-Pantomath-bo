@@ -7,6 +7,11 @@ import matplotlib.pyplot as plt
 import seaborn
 import os
 
+column = ['Video Name', 'Length', 'Average Band Energy', 'Avg Intensity', 'Max Intensity', 'Mean Intensity', 'Range Intensity', 'SD Intensity', 
+		   'Avg Pitch', 'Max Pitch', 'Mean Pitch', 'Range Pitch', 'SD Pitch',
+		   'Mean F1', 'Mean F2', 'Mean F3', 'Mean B1', 'Mean B2', 'Mean B3', 'SD F1', 'SD F2', 'SD F3', 
+		   'Mean F2/F1', 'Mean F3/F1', 'SD F2/F1', 'SD F3/F1']
+row = []
 
 def amplitude(sound):
 	x_sample = sound.xs()
@@ -148,15 +153,40 @@ def drawSpectrogram(sound, dynamic_range=70):
 
 def start(file):
     
-
-    with open(file,'w') as fwrite:
-        fwrite.write("================== Process Started ==================\n")
     
-    if file.exists():
+    if not file.exists():
         ## write our code for video taking
-        print("File Exists")
+        print("starting Audio analysis")
+        global row
+        data = []
+        directory = os.fsencode(os.getcwd())
+        
+        for file in os.listdir(directory):
+            filename = os.fsdecode(file)
+            
+            if filename.endswith(".xwav") or filename.endswith(".mp3"): 
+                sound = pm.Sound(filename)
+                print(filename)
+                row.append(filename)
+                end_time = sound.get_total_duration()
+                row.append(end_time)
+                amplitude(sound)
+                spectrum(sound)
+                intensity(sound)
+                pitch(sound)
+                formant(sound)
+                data.append(row)
+                row = []
+                # index +=1
+            else:
+                continue
+
+        df = pd.DataFrame(data = data, columns = column)
+        df.to_csv('data_save/audioCues.csv')
+        # plt.show()
+        
     else:
-        print("No file")
+        print("Some Process in running file")
 
 #log file is the heart
 file=Path("log.txt")
