@@ -10,6 +10,19 @@ import json
 import os
 from sklearn.externals import joblib
 
+def getLabel(filename):
+
+    data = filename.split("(")
+    part = data[1].split(")")
+
+    return part[0].replace(" ","_")
+
+def getValue(string):
+    length = len(string)
+
+    return string[1:length-1]
+
+
 def predict():
     # file = '../data_save/features.csv'
 
@@ -19,6 +32,8 @@ def predict():
     testVisual = pd.read_csv('../data_save/realtime_video_cues.csv').values
 
     mergeData = np.append(testVisual[0],testAudio[0,2:])
+    #print(mergeData)
+    
     jsonData = {}
 
     directory = os.fsencode(os.getcwd())
@@ -28,14 +43,16 @@ def predict():
 
         if filename.endswith(".pkl"):
             clf = joblib.load(filename)
-            predicted = clf.predict([mergeData[1,1:]])
+            predicted = clf.predict([mergeData[1:]])
 
-            jsonData[filename] = pd.Series(predicted).to_json(orient='values')
+            jsonData[getLabel(filename+"")] = getValue(pd.Series(predicted).to_json(orient='values')+"")
         else:
             continue
 
     #print(jsonData)
     with open('../data_save/predictedFeatures.json','w') as jsonFile:
         json.dump(jsonData,jsonFile)
+
+
 
 predict()
