@@ -12,7 +12,6 @@ import cv2
 import dlib
 import json
 from audio import audio_processing
-from analysis import predict
 
 #######################################
 t = 0
@@ -31,7 +30,7 @@ def start(file):
     smileScore = 0
     row = []
     featureArray = []
-    column = ['Average Smile Score','Outer Eyebrow Height','Inner Eyebrow Height','Outer Lip Height','Inner Lip Height','Inner Eyebrow Distance','Lip Corner Distance','Eye Opening']
+    column = ['Outer Eyebrow Height','Inner Eyebrow Height','Outer Lip Height','Inner Lip Height','Inner Eyebrow Distance','Lip Corner Distance','Eye Opening','Average Smile Score']
 
     #######################################
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
@@ -91,9 +90,9 @@ def start(file):
                 
                 ##################################################q
                 t = t + 1
-
-                temp = [smileScore]
-                temp.extend(landmarksArray)
+                
+                temp = landmarksArray
+                temp.append(smileScore)
                 featureArray.append(temp)
                 # print(featureArray)
 
