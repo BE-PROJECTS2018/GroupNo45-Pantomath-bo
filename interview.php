@@ -117,7 +117,7 @@
                             <div class="list">
                                 <ul class="quantity-list">
                                     <li class="quantity-item">
-                                        Number of interviews:&nbsp;&nbsp;
+                                        Number of Cadidates:&nbsp;&nbsp;
                                         <h2 class="quantity-item"><?php echo $num_total[0]["num"];?></h2>
                                     </li>
                                     <li class="quantity-item">
@@ -136,7 +136,9 @@
                     <div class="graphs">
                         <ul class="graph-list">
                             <li class="graph-number">
-                                    <div id="chart"><h2 style="text-align: center">Smile Score Variation</h2></div>
+                                    <div id="chart">
+                                    <h2 style="text-align: center">Smile Score Variation</h2>
+                                    </div>
                             </li>
                         </ul>
                     </div>
@@ -156,7 +158,7 @@
                                 $html = '
                                     <h3>' . $key . '</h3>
                                     <fieldset class="rating">';
-
+                                    
                                     if($value>4.5)
                                         {
 

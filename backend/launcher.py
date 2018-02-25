@@ -162,23 +162,23 @@ if __name__ == '__main__':
     #log file is the heart
 
     file=Path("log.txt")
-    #setup_logical_control(file)
+    setup_logical_control(file)
 
 
     #start realtime video and audio capture in parallel
     #start_realTimeVideo(file)
     #start_audio_capture(file)
 
-    #realTimeVideo = Thread(target = start_realTimeVideo,kwargs={'file':file})
-    #audioCapture = Thread(target = start_audio_capture,kwargs={'file':file})
+    realTimeVideo = Thread(target = start_realTimeVideo,kwargs={'file':file})
+    audioCapture = Thread(target = start_audio_capture,kwargs={'file':file})
 
-    #realTimeVideo.start()
-    #audioCapture.start()
+    realTimeVideo.start()
+    audioCapture.start()
 
 
     # wait until both have completed their task
-    #realTimeVideo.join()
-    #audioCapture.join()
+    realTimeVideo.join()
+    audioCapture.join()
 
     #start audio processing
     audio_processing.start_audio(file)
