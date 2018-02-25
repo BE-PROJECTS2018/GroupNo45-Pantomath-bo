@@ -9,9 +9,10 @@
 
         $db->select('pb_candidate_details','name',null,'c_id=' . $_GET["id"]);
         $res=$db->getResult();
-
+        
         //check whether record is already there or not
         //if there do nothing
+        
         if(empty($res[0]["name"])){
             //file locaton
             $filePath = 'backend/data_save/predictedFeatures.json';
@@ -26,7 +27,7 @@
             //save it to db
             $db->insert('pb_score_data',$json);
         }
-
+        
         //prepare for sending data to UI controller
         $db->sql('SELECT * FROM pb_score_data WHERE c_id=' . $_GET['id']);
         $res = $db->getResult();
