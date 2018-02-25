@@ -198,7 +198,7 @@
                                     "<h4>Degree:</h4>&nbsp;&nbsp;" . $row["degree"] . 
                                     "<h4>Resume</h4>&nbsp;&nbsp;<a href=\"" . $row["resume"] . "\">view</a>";
                                  
-                        $html .= '<h4><br><br><a href="./interview.php" class="button">Start Interview</a></h4>' . "</div></div>";;
+                        $html .= '<h4><br><br><a href="./interview.php" class="button">Proceed to Interview</a></h4>' . "</div></div>";;
                         
                         echo $html;
                     ?>

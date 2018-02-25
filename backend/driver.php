@@ -13,7 +13,7 @@ ini_set('max_execution_time', 300);
                 echo "\n" . $output;
             }
         }elseif($_GET["id"]==1){
-            $file = "C:\\xampp\htdocs\\pb\\front-end\\backend\\start.py";
+            $file = "C:\\xampp\htdocs\\pb\\front-end\\backend\\launcher.py";
             $output=exec($python . " " . $file);
             echo $output;
         }

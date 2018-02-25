@@ -50,8 +50,8 @@
          * convert image data uri to image file
          */
 
-        $file_path = "candidate/Images/" . $email . "__Image.png";
-        $img = str_replace('data:image/png;base64,', '', $image_data);
+        $file_path = "candidate/Images/" . $email . "__Image.jpeg";
+        $img = str_replace('data:image/jpeg;base64,', '', $image_data);
         $img = str_replace(' ', '+', $img);
         $img = base64_decode($img);
         
@@ -64,7 +64,7 @@
             'name'=>$name,
             'age'=>$age,
             'college'=>$college,
-            'resume'=>$uploadfile,
+            'resume'=>$location.$uploadfile,
             'photo'=>$file_path,
             'degree'=>$degree,
             'experience'=>$experience,
@@ -82,7 +82,7 @@
         }
 
         echo '<script type="text/javascript">
-           window.location = "./index.php?error="' . $error . ' 
+           window.location = "./index.php?error=' . $error . '";
       </script>';
     }
 ?>

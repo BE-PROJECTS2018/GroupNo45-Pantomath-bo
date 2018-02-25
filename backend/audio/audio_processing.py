@@ -151,20 +151,20 @@ def drawSpectrogram(sound, dynamic_range=70):
 	plt.xlim([sound.xmin, sound.xmax])
 
 
-def start_audio(file):
+def start_audio(fileLogic):
     
     
-    if not file.exists():
+    if not fileLogic.exists():
         ## write our code for video taking
         print("starting Audio analysis")
         global audio_row
         data = []
         directory = os.fsencode(os.getcwd())
-        
+        print(directory)
         for file in os.listdir(directory):
             filename = os.fsdecode(file)
             
-            if filename.endswith(".xwav") or filename.endswith(".mp3"): 
+            if filename.endswith(".wav") or filename.endswith(".mp3"): 
                 sound = pm.Sound(filename)
                 print(filename)
                 audio_row.append(filename)
@@ -182,12 +182,8 @@ def start_audio(file):
                 continue
 
         df = pd.DataFrame(data = data, columns = audio_Column)
-        df.to_csv('data_save/audioCues.csv')
+        df.to_csv('./data_save/audioCues.csv')
         # plt.show()
         
     else:
         print("Some Process in running file")
-
-#log file is the heart
-#file=Path("log.txt")
-#start(file)

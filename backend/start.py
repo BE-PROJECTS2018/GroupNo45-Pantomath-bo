@@ -14,15 +14,15 @@ import json
 from audio import audio_processing
 
 #######################################
-t = 0
-landmarksArray = []
-smileScore = 0
-row = []
-featureArray = []
-column = ['Average Smile Score','Outer Eyebrow Height','Inner Eyebrow Height','Outer Lip Height','Inner Lip Height','Inner Eyebrow Distance','Lip Corner Distance','Eye Opening']
+#t = 0
+#landmarksArray = []
+#smileScore = 0
+#row = []
+#featureArray = []
+#column = ['Average Smile Score','Outer Eyebrow Height','Inner Eyebrow Height','Outer Lip Height','Inner Lip Height','Inner Eyebrow Distance','Lip Corner Distance','Eye Opening']
 
 
-def start(file):
+def start_realTimeVideo(file):
     
     #######################################
     t = 0
@@ -50,10 +50,6 @@ def start(file):
 
 
     vs = VideoStream(usePiCamera = False).start()
-    # start = time.q
-
-    with open(file,'w') as fwrite:
-        fwrite.write("================== Process Started ==================\n")
     
     if file.exists():
         ## write our code for video taking
@@ -119,7 +115,7 @@ def start(file):
 file=Path("log.txt")
 
 #start realtime video
-start(file)
+#start_realTimeVideo(file)
 
 #start audio processing
 audio_processing.start_audio(file)
