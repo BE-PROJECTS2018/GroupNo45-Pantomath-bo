@@ -27,7 +27,14 @@
             //save it to db
             $stat = $db->insert('pb_score_data',$json);
             if($stat){
-                echo "success";
+                echo "successfully inserted the record in score data";
+                $dic["c_id"] = $_GET["id"];
+                $dic["c_rank"] = rand(1,30);
+                $dic["c_date"] = date("Y-m-d");
+
+                $state = $db->insert('pb_candidate_list',$dic);
+                echo "candidate list is updated";
+                
             }else{
                 echo "failed";
             }

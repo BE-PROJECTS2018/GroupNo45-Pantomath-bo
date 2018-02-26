@@ -140,7 +140,7 @@
                                             continue;
 
                                         if($key == 'resume')
-                                            $value = "<a href=\"./resume/" . $value . "\">Link</a>";
+                                            $value = "<a href=\"" . $value . "\">Link</a>";
                                         $li .= "<li class=\"candidate-item-1\">" . $key;
                                         $li .= "<h2>" . $value . "</h2></h3><br></li>";
                                     }
@@ -152,7 +152,7 @@
                     <section class="post">
                         <header class="post-header">
                             <?php
-                                echo "<img width=\"300\" height=\"300\" alt=\"Eric Ferraiuolo&#x27;s avatar\" class=\"post-avatar\" src=\"img/candidate/" . $row["photo"] . "\">";
+                                echo "<img width=\"300\" height=\"300\" alt=\"Eric Ferraiuolo&#x27;s avatar\" class=\"post-avatar\" src=\"" . $row["photo"] . "\">";
                             ?>
                             <h2 class="post-title">Everything You Need to Know About "Candidate"</h2>
                             

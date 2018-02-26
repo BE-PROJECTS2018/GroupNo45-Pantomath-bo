@@ -4,11 +4,12 @@ $(function(){
 		url:"./serverScript/fetch_candidate_list.php",
         dataType:"json",
         success:function(data){
+							console.log(data);
         			var list = "";
         			$.each(data, function(index){
         				list = "<div class=\"mdl-card mdl-shadow--2dp mdl-card--horizontal\"> \
         							<div class=\"mdl-card__media\"> \
-        								<img src=\"./img/candidate/"+data[index].photo+"\"alt=\"img\"> \
+        								<img src=\""+data[index].photo+"\"alt=\"img\"> \
 			                     	</div> \
 			                        <div class=\"mdl-card__title\"> \
 			                          <h2 class=\"mdl-card__title-text\">"+data[index].name+"</h2> \
