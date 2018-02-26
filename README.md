@@ -12,6 +12,12 @@ serverScript/class folder
 	type: localhost/front-end/  in address bar
 
 # update:
+	- resume broken link resolve
+	- image format resolved
+	- concurrent video and audio processing added
+	- login redirect resolved
+	- interview page start and stop button error resolved
+	- interview realtime graph resolved
 	-One page Added
 		-login and register UI
 	-two pages are added
