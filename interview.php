@@ -192,12 +192,12 @@
         $("#start").click(function(){
             if(!started){
                 started=true;
-                /*
+                
                 $.get("./backend/driver.php",{"id":1},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
                     initiate();
                 });
-                */
+                
                 initiate();
             }
             else{
@@ -269,7 +269,7 @@
 		    success: function(e) {
 		        var obj = JSON.parse(e);
 		      	console.log(obj);
-		      	graph.series.addData(obj.series, obj.x+Math.floor(Math.random() * 80));
+		      	graph.series.addData(obj.series, obj.x);
 		        graph.render();
 		    }
 
