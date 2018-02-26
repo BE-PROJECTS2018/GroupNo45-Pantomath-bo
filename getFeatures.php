@@ -7,13 +7,13 @@
         $db = new Database();
         $db->connect();
 
-        $db->select('pb_candidate_details','name',null,'c_id=' . $_GET["id"]);
+        $db->select('pb_score_data','s_id',null,'c_id=' . $_GET["id"]);
         $res=$db->getResult();
         
         //check whether record is already there or not
         //if there do nothing
         
-        if(empty($res[0]["name"])){
+        if(empty($res)){
             //file locaton
             $filePath = 'backend/data_save/predictedFeatures.json';
 
@@ -25,12 +25,18 @@
             $json["c_id"]=$_GET["id"];
 
             //save it to db
-            $db->insert('pb_score_data',$json);
+            $stat = $db->insert('pb_score_data',$json);
+            if($stat){
+                echo "success";
+            }else{
+                echo "failed";
+            }
         }
         
         //prepare for sending data to UI controller
         $db->sql('SELECT * FROM pb_score_data WHERE c_id=' . $_GET['id']);
         $res = $db->getResult();
+        //print_r($res);
         $row = $res[0]; // array of paramenter including id's
         $html="";
         foreach ($row as $key => $value) {

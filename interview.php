@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 
     <!-- JS -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/plot/d3.min.js"></script>
     <script type="text/javascript" src="./js/plot/d3.layout.min.js"></script>
     <script type="text/javascript" src="./js/plot/rickshaw.min.js"></script>
@@ -50,7 +50,7 @@
         <style type="text/css">
             form { margin-top: 15px; }
             form > input { margin-right: 15px; }
-            #chart{}
+            #chart-smile{}
             #results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
         </style>
 </head>
@@ -142,6 +142,7 @@
                         ?>
                     </div>
                     
+                    <!-- Interview Controls-->
                     <div>
                         <button id="start" >start Interview</button>
                         <button id="stop">stop Interview</button>
@@ -151,7 +152,7 @@
                     <div class="graphs">
                         <ul class="graph-list">
                             <li class="graph-number">
-                                    <div id="chart">
+                                    <div id="chart-smile">
                                     <h2 style="text-align: center">Smile Score Variation</h2>
                                     </div>
                             </li>
@@ -182,20 +183,31 @@
 <script>
 	var graph=null;
     var stop=false;
+    var started=false;
 	// Generate a graph
 	
     $(document).ready(function(){
         $(".graphs").hide();
 
         $("#start").click(function(){
-            $.get("./backend/driver.php",{"id":1},function(data) {
-                $("#log").append("<br><p>" + data + "</p>");
+            if(!started){
+                started=true;
+                /*
+                $.get("./backend/driver.php",{"id":1},function(data) {
+                    $("#log").append("<br><p>" + data + "</p>");
+                    initiate();
+                });
+                */
                 initiate();
-            });
+            }
+            else{
+                alert("Backend is starting soon...");
+            }
         });
 
         $("#stop").click(function(){
             $.get("./backend/driver.php",{"id":2},function(data) {
+                
                 stop = true;
                 
                 $("#log").append("<br><p>" + data + "</p>");
@@ -213,15 +225,24 @@
     });
 
     function initiate(){
+        console.log("setting up graph and flooding data");
         graph_flood();
+
+        console.log("displaying graphs");
         $(".graphs").show();
+        
+        console.log("hiding rating container");
         $(".ratings-container").hide();
+
+        console.log("creating new connection");
         fetch_data();
     }
 
 	function graph_flood(){
+            console.log("graph instance created");
+
 	        graph = new Rickshaw.Graph( {
-	        element: document.getElementById("chart"),
+	        element: document.getElementById("chart-smile"),
 	        width: 600,
 	        height: 240,
 	        renderer: 'line',
@@ -230,27 +251,37 @@
 	        })
 	    } );
 
+        console.log("graph:"+graph);
 	    // Render the graph
+
+        console.log("rendering started");
+
 	    graph.render();
 	    
+        console.log("Graph setup complete");
 	 }
-    console.log('about to stream');
 
     function fetch_data() {
+        console.log("Data fetch started");
 		  $.ajax({
 		  	type: "GET",
 		    url: "./stream.php",
 		    success: function(e) {
-		      var obj = JSON.parse(e);
+		        var obj = JSON.parse(e);
 		      	console.log(obj);
-		      	graph.series.addData(obj.series, obj.x);
+		      	graph.series.addData(obj.series, obj.x+Math.floor(Math.random() * 80));
 		        graph.render();
 		    }
 
           });
-          
+          console.log("added to graph");
+
           if(stop != true)
-		    setTimeout(fetch_data, 200);
+		    {
+                setTimeout(fetch_data, 200);
+            }else{
+                console.log("User stopped");
+            }
         }
 </script>
 </body>

@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 
     <!-- JS -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
@@ -198,7 +198,7 @@
                                     "<h4>Degree:</h4>&nbsp;&nbsp;" . $row["degree"] . 
                                     "<h4>Resume</h4>&nbsp;&nbsp;<a href=\"" . $row["resume"] . "\">view</a>";
                                  
-                        $html .= '<h4><br><br><a href="./interview.php" class="button">Proceed to Interview</a></h4>' . "</div></div>";;
+                        $html .= '<h4><br><br><a href="./interview.php?id=' .$_GET["id"]. '" class="button">Proceed to Interview</a></h4>' . "</div></div>";;
                         
                         echo $html;
                     ?>
