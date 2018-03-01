@@ -22,7 +22,7 @@
     background-color:rgb(255,64,129);
     background-repeat:repeat;
     background-position:50% 50%;
-    background-size:cover;
+    /*background-size:cover;*/
     background-origin:padding-box;
     background-attachment:scroll;
     box-sizing:border-box
@@ -157,4 +157,9 @@
 }
 .qualification{
   list-style-type: none;
+}
+
+#img_photo{
+    height: 30px;
+    width: 80px;
 }
