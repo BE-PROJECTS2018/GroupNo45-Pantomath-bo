@@ -146,6 +146,7 @@
                     <div>
                         <button id="start" >start Interview</button>
                         <button id="stop">stop Interview</button>
+                        <button id="fetch">Get Analysis</button>
                         <div id="log">Here your log comes</div>
                     </div>
 
@@ -213,16 +214,37 @@
                 $("#log").append("<br><p>" + data + "</p>");
                 $(".graphs").hide();
                 $(".ratings-container").show();
-
+                /*
                 $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
                         var obj = data;
                         console.log(obj);
                         $("#final_score").html(data);
                 });
+                */
             });
         });
+
+        $("#fetch").click(function(){
+            $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>,"fetch":1},function(data) {
+                    $("#log").html("<br><p>" + data + "</p>");
+
+                    sleepNow(2000);
+
+                    var obj = data;
+                    console.log(obj);
+                    $("#final_score").html(data);
+                });
+        });
     });
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    async function sleepNow(param) {
+    console.log('Taking a break...');
+    await sleep(param);
+    console.log(param + ' second later');
+    }
 
     function initiate(){
         console.log("setting up graph and flooding data");

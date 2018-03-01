@@ -8,8 +8,8 @@ $(function(){
         			var list = "";
         			$.each(data, function(index){
         				list = "<div class=\"mdl-card mdl-shadow--2dp mdl-card--horizontal\"> \
-        							<div class=\"mdl-card__media\" id=\"img_photo\"> \
-        								<img src=\""+data[index].photo+"\"alt=\"img\"> \
+        							<div class=\"mdl-card__media\"> \
+        								<img id=\"img_photo\" src=\""+data[index].photo+"\"alt=\"img\"> \
 			                     	</div> \
 			                        <div class=\"mdl-card__title\"> \
 			                          <h2 class=\"mdl-card__title-text\">"+data[index].name+"</h2> \
