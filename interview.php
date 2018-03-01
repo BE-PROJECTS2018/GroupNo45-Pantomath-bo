@@ -65,7 +65,7 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a class="pure-button" href="./start.php">Interview Info</a>
+                        <a class="pure-button" <?php echo "href=\"./start.php?id=" . $_GET["id"] . "\""?>>Interview Info</a>
                     </li>
                     <li class="nav-item">
                         <a class="pure-button" href="./list.php">List of Candidates</a>
@@ -237,6 +237,7 @@
                 });
         });
     });
+    
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
         }
