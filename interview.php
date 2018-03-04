@@ -12,7 +12,7 @@
     $num_total = $db->getResult();
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -33,26 +33,17 @@
     <script type="text/javascript" src="./js/plot/Rickshaw.Series.Sliding.js"></script>
     <script type="text/javascript" src="./js/plot/d3.v2.js"></script>
     
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
-    <!--<![endif]-->
     
     
-        <!--[if lte IE 8]>
-            <link rel="stylesheet" href="css/layouts/blog-old-ie.css">
-        <![endif]-->
-        <!--[if gt IE 8]><!-->
-            <link rel="stylesheet" href="css/layouts/blog.css">
-        <!--<![endif]-->
-        <style type="text/css">
-            form { margin-top: 15px; }
-            form > input { margin-right: 15px; }
-            #chart-smile{}
-            #results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
-        </style>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="css/layouts/blog.css">
+    
+    <style type="text/css">
+        form { margin-top: 15px; }
+        form > input { margin-right: 15px; }
+        #chart-smile{}
+        #results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
+    </style>
 </head>
 <body onload="startTime()">
 
@@ -165,18 +156,6 @@
                 <section class="ratings-container" id="final_Score">                       
                 </section>
             </div>
-
-            <!--
-            <div class="footer">
-                <div class="pure-menu pure-menu-horizontal">
-                    <ul>
-                        <li class="pure-menu-item"><a href="http://purecss.io/" class="pure-menu-link">About</a></li>
-                        <br/>
-                        <i class="fa fa-heart heart"></i>
-                    </ul>
-                </div>
-            </div>
-                        -->
         </div>
     </div>
 </div>

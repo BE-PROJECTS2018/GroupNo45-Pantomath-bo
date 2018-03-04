@@ -126,6 +126,7 @@
 
                           <fieldset>
                                 <button style="display:block;width:120px; height:30px;" onclick="document.getElementById('getFile').click()">Upload Resume</button>
+                                <i id="fileName">Nothing selected</i>
                                 <input name="file" type="file" id="getFile" style="display:none;padding:2px;" accept=".pdf" tabindex="5" required autofocus>
                             </fieldset>
 
@@ -161,6 +162,7 @@
                               var click=0;
                               $(document).ready(function(){
                                     $("#register").hide();
+                                    $("#fileName").hide();
                                     $("#register-photo").hide();
 
                                     $("#login-trigger").click(function(){
@@ -183,6 +185,13 @@
                                             jpeg_quality: 90
                                         });
                                         Webcam.attach( '#my_camera' );
+                                    });
+
+                                    $('input[type="file"]').change(function(e){
+                                        var fileName = e.target.files[0].name;
+                                        $("#fileName").show();
+                                        $("#fileName").html(fileName);
+                                        //alert('The file "' + fileName +  '" has been selected.');
                                     });
                                 });
                           
