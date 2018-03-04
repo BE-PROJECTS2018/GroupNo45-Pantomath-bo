@@ -173,7 +173,7 @@
             if(!started){
                 started=true;
                 
-                $.get("./backend/driver.php",{"id":1},function(data) {
+                $.get("./driver.php",{"id":1},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
                     initiate();
                 });
@@ -186,7 +186,7 @@
         });
 
         $("#stop").click(function(){
-            $.get("./backend/driver.php",{"id":2},function(data) {
+            $.get("./driver.php",{"id":2},function(data) {
                 
                 stop = true;
                 
