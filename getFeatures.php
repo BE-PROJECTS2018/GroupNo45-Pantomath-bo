@@ -53,7 +53,7 @@
                 # code...
                 if($key == 's_id' || $key == 'c_id')
                     continue;
-                $html .= '
+                $html .= '<div class="card">
                     <h3>' . $key . '</h3>
                     <fieldset class="rating">';
                     
@@ -192,10 +192,10 @@
                                 <input type="radio" id="starhalf" name=" ' . $key . '-rating" value="half"  ' . 'checked="checked"' . ' /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>';
                     }
                 
-                $html .=' </fieldset><br><br>';
+                $html .=' </fieldset></div><br><br>';
             }
             
-            echo $html;
+            echo '<div class="container"><div class="container-wrapper">' . $html . '</div></div>';
         }
             $db->disconnect();
     }else{

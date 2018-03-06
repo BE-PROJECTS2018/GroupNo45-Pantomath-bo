@@ -43,6 +43,43 @@
         form > input { margin-right: 15px; }
         #chart-smile{}
         #results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
+        #myProgress {
+            width: 750px;
+            background-color: #ddd;
+        }
+
+        #myBar {
+            width: 10%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        }
+
+        .container-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 750px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        }
+
+        .card {
+        border: 1px solid #ddd;
+        }
     </style>
 </head>
 <body onload="startTime()">
@@ -120,40 +157,55 @@
                         </div>
                     </div>
                 </section>
-                <section>
-                    <!-- candidate photo -->
-                    <div id="results" >
-                        <?php 
-                            $db->sql('SELECT photo FROM pb_candidate_details WHERE c_id=' . $_GET['id']);
-                            $res = $db->getResult();
+                <section >
+                    <div class="container">
+                        <div class="container-wrapper">
+                            <!-- candidate photo -->
+                            <div id="results" class="card" >
+                                <?php 
+                                    $db->sql('SELECT photo FROM pb_candidate_details WHERE c_id=' . $_GET['id']);
+                                    $res = $db->getResult();
 
-                            $html = '<h2>Candidate Profile:</h2>' . 
-                                    '<img src="' . $res[0]["photo"] . '"/>';
-                            echo $html;
-                        ?>
+                                    $html = '<h2>Candidate Profile:</h2>' . 
+                                            '<img src="' . $res[0]["photo"] . '"/>';
+                                    echo $html;
+                                ?>
+                            </div>
+                            
+                            <!-- Interview Controls-->
+                            <div class="card">
+                                <button id="start" >start Interview</button>
+                                <button id="stop">stop Interview</button>
+                                <button id="fetch">Get Analysis</button>
+                                <div id="log">Here your log comes</div>
+                            </div>
+                        </div>
+
                     </div>
-                    
-                    <!-- Interview Controls-->
-                    <div>
-                        <button id="start" >start Interview</button>
-                        <button id="stop">stop Interview</button>
-                        <button id="fetch">Get Analysis</button>
-                        <div id="log">Here your log comes</div>
+                    <div class="container">
+                    <div class="container-wrapper">
+                        <div id="myProgress" class="card">
+                            <div id="myBar">10%</div>
+                        </div>
                     </div>
 
-                    <div class="graphs">
-                        <ul class="graph-list">
-                            <li class="graph-number">
-                                    <div id="chart-smile">
-                                    <h2 style="text-align: center">Smile Score Variation</h2>
-                                    </div>
-                            </li>
-                        </ul>
+                    <div class="container-wrapper">
+                        <div class="graphs">
+                            <ul class="graph-list">
+                                <li class="graph-number">
+                                        <div id="chart-smile">
+                                        <h2 style="text-align: center">Smile Score Variation</h2>
+                                        </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     </div>
                     
                 </section>
 
-                <section class="ratings-container" id="final_Score">                       
+                <section class="ratings-container" id="final_Score">
+
                 </section>
             </div>
         </div>
@@ -172,10 +224,11 @@
         $("#start").click(function(){
             if(!started){
                 started=true;
-                
+                move();
                 $.get("./driver.php",{"id":1},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
-                    initiate();
+                    //$("#myProgress").hide();
+                   // initiate();
                 });
                 
                 initiate();
@@ -189,7 +242,6 @@
             $.get("./driver.php",{"id":2},function(data) {
                 
                 stop = true;
-                
                 $("#log").append("<br><p>" + data + "</p>");
                 $(".graphs").hide();
                 $(".ratings-container").show();
@@ -262,6 +314,21 @@
 	    
         console.log("Graph setup complete");
 	 }
+
+     function move() {
+        var elem = document.getElementById("myBar");   
+        var width = 10;
+        var id = setInterval(frame, 300);
+        function frame() {
+            if (width >= 100) {
+            clearInterval(id);
+            } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = width * 1  + '%';
+            }
+        }
+    }
 
     function fetch_data() {
         console.log("Data fetch started");
