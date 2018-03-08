@@ -220,14 +220,16 @@
 	
     $(document).ready(function(){
         $(".graphs").hide();
+        $("#myProgress").hide();
 
         $("#start").click(function(){
             if(!started){
                 started=true;
+                $("#myProgress").show();
                 move();
                 $.get("./driver.php",{"id":1},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
-                    //$("#myProgress").hide();
+                    $("#myProgress").hide();
                    // initiate();
                 });
                 
