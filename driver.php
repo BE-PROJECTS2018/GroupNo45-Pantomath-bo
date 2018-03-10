@@ -4,20 +4,23 @@
 
     if(isset($_GET["id"])){
         $python = "c:\\python36\\python.exe";
-        $py = "py";
         
         if($_GET["id"]==2){
-            $file = "C:\\xampp\htdocs\\pb\\front-end\\backend\\stop.py";
+            $file = "C:\\xampp\\htdocs\\pb\\front-end\\stop.py";
             $output=exec($python . " " . $file);
             echo "stop is called";
             echo "<br>" . $output;
 
         }elseif($_GET["id"]==1){
             echo 'id=' . $_GET["id"];
-            $file = "C:\\xampp\htdocs\\pb\\front-end\\backend\\launcher.py";
+            $file = "C:\\xampp\\htdocs\\pb\\front-end\\launcher.py";
             $output=exec($python . " " . $file);
+            //$output = shell_exec('py ' . $file);
+            /*
+            $output = `c:\\python36\\python.exe {C:\\xampp\\htdocs\\pb\\front-end\\backend\\launcher.py}`;
+            echo "<pre>$output</pre>";
             echo "<br>start is called<br>";
-            echo $output;
+            */
         }
     }else{
         echo "Invalid request";
