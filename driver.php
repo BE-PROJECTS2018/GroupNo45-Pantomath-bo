@@ -15,15 +15,11 @@
             echo 'id=' . $_GET["id"];
             $file = "C:\\xampp\\htdocs\\pb\\front-end\\launcher.py";
             $output=exec($python . " " . $file);
-            //$output = shell_exec('py ' . $file);
-            /*
-            $output = `c:\\python36\\python.exe {C:\\xampp\\htdocs\\pb\\front-end\\backend\\launcher.py}`;
-            echo "<pre>$output</pre>";
-            echo "<br>start is called<br>";
-            */
+            echo "started";
+            
         }
     }else{
-        echo "Invalid request"; 
+        echo "Invalid request";
     }
     
 ?>
