@@ -230,7 +230,7 @@
                 $.get("./driver.php",{"id":1},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
                     $("#myProgress").hide();
-                   // initiate();
+                   initiate();
                 });
                 
                 initiate();

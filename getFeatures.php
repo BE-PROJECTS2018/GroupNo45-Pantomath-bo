@@ -16,7 +16,7 @@
         
         if(empty($res)){
             //file locaton
-            $filePath = 'backend/data_save/predictedFeatures.json';
+            $filePath = './data_save/predictedFeatures.json';
 
             //get the content of thea json file
             $jsonStringData  = file_get_contents($filePath);
@@ -28,13 +28,13 @@
             //save it to db
             $stat = $db->insert('pb_score_data',$json);
             if($stat){
-                echo "successfully inserted the record in score data";
+                //echo "successfully inserted the record in score data";
                 $dic["c_id"] = $_GET["id"];
                 $dic["c_rank"] = rand(1,30);
                 $dic["c_date"] = date("Y-m-d");
 
                 $state = $db->insert('pb_candidate_list',$dic);
-                echo "candidate list is updated";
+                //echo "candidate list is updated";
                 
             }else{
                 echo "failed";
@@ -47,6 +47,7 @@
             $db->sql('SELECT * FROM pb_score_data WHERE c_id=' . $_GET['id']);
             $res = $db->getResult();
             //print_r($res);
+            
             $row = $res[0]; // array of paramenter including id's
             $html="";
             foreach ($row as $key => $value) {
