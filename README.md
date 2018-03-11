@@ -43,3 +43,5 @@ open the detail page of any candidate and go to lower section. realtime analytic
 	6.	Go to Github website there you will find compare and pull-request near new branch added message
 	7.	Bingo! you did it, yeah....	
  
+ # Images
+	![Alt text](ss/img.png?raw=true "Test")
