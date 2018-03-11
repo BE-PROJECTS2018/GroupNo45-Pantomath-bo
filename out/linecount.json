@@ -1,0 +1,707 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "c:\\xampp\\htdocs\\pb\\front-end",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2018-03-11 13:50:00",
+            "filesum": 110,
+            "codesum": 73190,
+            "commentsum": 2174,
+            "blanksum": 2506,
+            "filelist": [
+                {
+                    "filename": "audio\\__pycache__\\audio_processing.cpython-36.pyc",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 36,
+                    "code": 109,
+                    "comment": 44,
+                    "filename": "audio\\audio_processing.py"
+                },
+                {
+                    "blank": 13,
+                    "code": 34,
+                    "comment": 2,
+                    "filename": "audio_capture.py"
+                },
+                {
+                    "filename": "candidate\\Images\\abcde@gmail.com__Image.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "candidate\\Images\\abcmmm@gmail.com__Image.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "candidate\\Images\\akshay.chidrawar6@ves.ac.in__Image.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "candidate\\Images\\akshaygunani@gmail.com__Image.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "candidate\\Images\\ankit.shaw@ves.ac.in__Image.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "candidate\\Images\\narcos@gmail.com__Image.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "candidate\\Images\\pankajsharma@gmail.com__Image.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 6,
+                    "code": 1244,
+                    "comment": 353,
+                    "filename": "candidate\\Resume\\abcd@gmail.com_EBC Concent Letter.pdf"
+                },
+                {
+                    "blank": 6,
+                    "code": 1244,
+                    "comment": 353,
+                    "filename": "candidate\\Resume\\abcde@gmail.com_EBC Concent Letter.pdf"
+                },
+                {
+                    "filename": "candidate\\Resume\\akshaygunani@gmail.com_Self Declaration.pdf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 558,
+                    "comment": 302,
+                    "filename": "candidate\\Resume\\ankit.shaw@ves.ac.in_616ACC.pdf"
+                },
+                {
+                    "filename": "candidate\\Resume\\niel.pradhan@ves.ac.in_DistributedSystemWithDocker.pdf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 6,
+                    "code": 1244,
+                    "comment": 353,
+                    "filename": "candidate\\Resume\\p.sharma@yahoo.com_EBC Concent Letter.pdf"
+                },
+                {
+                    "blank": 1,
+                    "code": 558,
+                    "comment": 302,
+                    "filename": "candidate\\Resume\\pankajsharma@gmail.com_616ACC.pdf"
+                },
+                {
+                    "filename": "candidate\\Resume\\rahul.sharma@ves.ac.in_DistributedSystemWithDocker.pdf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "control_ui.html"
+                },
+                {
+                    "blank": 87,
+                    "code": 1694,
+                    "comment": 7,
+                    "filename": "css\\bootstrap-grid.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "css\\bootstrap-grid.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 7,
+                    "filename": "css\\bootstrap-grid.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "css\\bootstrap-grid.min.css.map"
+                },
+                {
+                    "blank": 57,
+                    "code": 278,
+                    "comment": 8,
+                    "filename": "css\\bootstrap-reboot.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "css\\bootstrap-reboot.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 8,
+                    "filename": "css\\bootstrap-reboot.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "css\\bootstrap-reboot.min.css.map"
+                },
+                {
+                    "blank": 1027,
+                    "code": 7865,
+                    "comment": 7,
+                    "filename": "css\\bootstrap.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "css\\bootstrap.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 7,
+                    "filename": "css\\bootstrap.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "css\\bootstrap.min.css.map"
+                },
+                {
+                    "blank": 5,
+                    "code": 158,
+                    "comment": 2,
+                    "filename": "css\\card\\card-style.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 5703,
+                    "comment": 1,
+                    "filename": "css\\card\\dump.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 4,
+                    "filename": "css\\fa-brands.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 4,
+                    "filename": "css\\fa-brands.min.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 4,
+                    "filename": "css\\fa-regular.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 4,
+                    "filename": "css\\fa-regular.min.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 4,
+                    "filename": "css\\fa-solid.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 4,
+                    "filename": "css\\fa-solid.min.css"
+                },
+                {
+                    "blank": 833,
+                    "code": 1770,
+                    "comment": 6,
+                    "filename": "css\\fontawesome-all.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 4,
+                    "filename": "css\\fontawesome-all.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1432,
+                    "comment": 47,
+                    "filename": "css\\fontawesome.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 4,
+                    "filename": "css\\fontawesome.min.css"
+                },
+                {
+                    "blank": 36,
+                    "code": 157,
+                    "comment": 1,
+                    "filename": "css\\layouts\\blog-old-ie.css"
+                },
+                {
+                    "blank": 34,
+                    "code": 227,
+                    "comment": 4,
+                    "filename": "css\\layouts\\blog.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 11,
+                    "filename": "css\\mainstyle.css"
+                },
+                {
+                    "blank": 17,
+                    "code": 106,
+                    "comment": 1,
+                    "filename": "css\\registration\\registration.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "data_save\\audioCues.csv"
+                },
+                {
+                    "filename": "data_save\\output.avi",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "data_save\\plot_facialPoint.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "data_save\\plot_smile.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "data_save\\predictedFeatures.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "data_save\\realtime_video_cues.csv"
+                },
+                {
+                    "filename": "dependencies\\fer2013.hdf5",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 12170,
+                    "comment": 43,
+                    "filename": "dependencies\\haarcascade_eye.xml"
+                },
+                {
+                    "blank": 0,
+                    "code": 33271,
+                    "comment": 43,
+                    "filename": "dependencies\\haarcascade_frontalface_default.xml"
+                },
+                {
+                    "filename": "dependencies\\shape_predictor_68_face_landmarks.dat",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 18,
+                    "code": 107,
+                    "comment": 0,
+                    "filename": "details.php"
+                },
+                {
+                    "filename": "Did he appear calm. (Calm).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Did he maintained proper eye contact. (Eye Contact).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Did he seem excited. (Excitement).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Did he seem focused. (Focused).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Did he seem Friendly. (Friendliness).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Did he smile appropriately. (Smile).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Did he use engaging tone. (Engagement).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 6,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "driver.php"
+                },
+                {
+                    "filename": "file.wav",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "font\\fontawesome-webfont.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "font\\fontawesome-webfont.woff",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 17,
+                    "code": 75,
+                    "comment": 12,
+                    "filename": "getFeatures.php"
+                },
+                {
+                    "filename": "How likely is the person to be hired. (Recommend Rating).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 11,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "index.php"
+                },
+                {
+                    "blank": 16,
+                    "code": 74,
+                    "comment": 0,
+                    "filename": "interview.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 6,
+                    "filename": "js\\bootstrap.min.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "js\\candidate\\candidate-list.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 2,
+                    "filename": "js\\jquery.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "js\\plot\\d3.layout.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "js\\plot\\d3.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1837,
+                    "comment": 0,
+                    "filename": "js\\plot\\d3.v2.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 32,
+                    "comment": 13,
+                    "filename": "js\\plot\\gauge-custom.js"
+                },
+                {
+                    "blank": 44,
+                    "code": 211,
+                    "comment": 7,
+                    "filename": "js\\plot\\gauge.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 18,
+                    "comment": 6,
+                    "filename": "js\\plot\\realtime-smile.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 1,
+                    "filename": "js\\plot\\rickshaw.min.js"
+                },
+                {
+                    "blank": 40,
+                    "code": 108,
+                    "comment": 26,
+                    "filename": "js\\plot\\Rickshaw.Series.Sliding.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "js\\webcam\\webcam.min.js"
+                },
+                {
+                    "blank": 50,
+                    "code": 120,
+                    "comment": 17,
+                    "filename": "launcher.py"
+                },
+                {
+                    "blank": 11,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "list.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "login.php"
+                },
+                {
+                    "filename": "main_utils\\__pycache__\\realTimeFacialLandmarks.cpython-36.pyc",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "main_utils\\__pycache__\\smile_detection.cpython-36.pyc",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 7,
+                    "code": 20,
+                    "comment": 23,
+                    "filename": "main_utils\\plot.py"
+                },
+                {
+                    "blank": 8,
+                    "code": 35,
+                    "comment": 3,
+                    "filename": "main_utils\\realTimeFacialLandmarks.py"
+                },
+                {
+                    "blank": 10,
+                    "code": 30,
+                    "comment": 1,
+                    "filename": "main_utils\\smile_detection.py"
+                },
+                {
+                    "filename": "predictionModal\\__pycache__\\modal.cpython-36.pyc",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 17,
+                    "code": 35,
+                    "comment": 5,
+                    "filename": "predictionModal\\modal.py"
+                },
+                {
+                    "blank": 9,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 15,
+                    "code": 54,
+                    "comment": 17,
+                    "filename": "register.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 183,
+                    "comment": 81,
+                    "filename": "serverScript\\class\\Database.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "serverScript\\DatabaseTest.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 1,
+                    "filename": "serverScript\\delete.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "serverScript\\fetch_candidate_list.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "serverScript\\full_sql.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 2,
+                    "filename": "serverScript\\insert.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 1,
+                    "filename": "serverScript\\join.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 1,
+                    "filename": "serverScript\\update.php"
+                },
+                {
+                    "blank": 17,
+                    "code": 96,
+                    "comment": 3,
+                    "filename": "start.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "stop.py"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "stream.php"
+                },
+                {
+                    "filename": "The Overall performance of the candidate. (Overall Rating).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "Was he stressed. (Not Stressed).pkl",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                }
+            ]
+        }
+    ]
+}
