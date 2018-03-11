@@ -51,7 +51,7 @@ open the detail page of any candidate and go to lower section. realtime analytic
 	1. Login Area
 ![Screenshot](ss/1.login_area.png)
 
-	2. Registration Page 1
+	2. Registration Page
 ![Screenshot](ss/2.registration_page_1.png)
 ![Screenshot](ss/2.registration_page_2.png)
 
