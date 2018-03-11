@@ -44,4 +44,4 @@ open the detail page of any candidate and go to lower section. realtime analytic
 	7.	Bingo! you did it, yeah....	
  
  # Images
-	![Alt text](ss/img.png?raw=true "Test")
+ ![Screenshot](ss/img.png)
