@@ -44,4 +44,5 @@ open the detail page of any candidate and go to lower section. realtime analytic
 	7.	Bingo! you did it, yeah....	
  
  # Images
- ![Screenshot](ss/img.png)
+	1. Login Area
+	![Screenshot](ss/login area.png)
