@@ -12,6 +12,10 @@ serverScript/class folder
 	type: localhost/front-end/  in address bar
 
 # update:
+	- Interview start Progress bar added
+	- streaming issue resolved
+	- UI modified in interview page
+	- connectivity issue resolved
 	- resume broken link resolve
 	- image format resolved
 	- concurrent video and audio processing added
