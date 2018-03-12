@@ -41,7 +41,6 @@
     <style type="text/css">
         form { margin-top: 15px; }
         form > input { margin-right: 15px; }
-        #chart-smile{}
         #results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
         #myProgress {
             width: 750px;
@@ -223,6 +222,7 @@
     $(document).ready(function(){
         $(".graphs").hide();
         $("#myProgress").hide();
+        $(".ratings-container").hide();
 
         $("#start").click(function(){
             if(!started){
@@ -247,7 +247,6 @@
                 stop = true;
                 $("#log").append("<br><p>" + data + "</p>");
                 $(".graphs").hide();
-                $(".ratings-container").show();
                 
                 $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
@@ -260,10 +259,11 @@
 
         $("#fetch").click(function(){
             $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>,"fetch":1},function(data) {
-                    $("#log").html("<br><p>" + data + "</p>");
+                    //$("#log").html("<br><p>" + data + "</p>");
                     var obj = data;
                     console.log(obj);
-                    $("#final_score").html(data);
+                    $(".ratings-container").html(data);
+                    $(".ratings-container").show();
                 });
         });
     });
@@ -359,7 +359,7 @@
                     console.log("data changed");
                 }else{
                     lastModified = parseInt(e);
-                    isLastModified = true;
+                    isLastModifiedSet = true;
                 }
 
                 if(lastModified == parseInt(e)){
