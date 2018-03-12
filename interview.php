@@ -230,12 +230,11 @@
                 $("#myProgress").show();
                 progressBar();
                 $.get("./driver.php",{"id":1},function(data) {
-
                     console.log(data);
                     $("#log").append("<br><p>" + data + "</p>");
-                    
-                   //initiate();
                 });
+
+                getBackgroundStatus();
             }
             else{
                 alert("Backend is starting soon...");
@@ -343,6 +342,12 @@
                 console.log("User stopped");
             }
         }
+    
+    function loadData(){
+        console.log("showing smile score");
+        $("#myProgress").hide();
+        initiate();
+    }
 
     function getBackgroundStatus() {
         $.ajax({
@@ -350,18 +355,19 @@
             url: "./backgroundStatus.php",
             success: function(e) {
                 console.log(e);
-                if(lastModified < e && isLastModifiedSet){
+                if(lastModified < parseInt(e) && isLastModifiedSet){
                     console.log("data changed");
                 }else{
-                    lastModified = e;
+                    lastModified = parseInt(e);
                     isLastModified = true;
                 }
 
-                if(lastModified == e){
-                    setTimeout(getBackgroundStatus,1000);
+                if(lastModified == parseInt(e)){
+                    console.log("last modified is same");
+                    setTimeout(getBackgroundStatus,500);
                 }else{
-                    $("#myProgress").hide();
-                    initiate();
+                    console.log("calling load data");
+                    loadData();
                 }
             }
         });
