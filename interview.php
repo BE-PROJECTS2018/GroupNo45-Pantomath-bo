@@ -17,8 +17,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
-    <title>Blog &ndash; Layout Examples &ndash; Pure</title>
+    <meta name="description" content="New Intelligent System">
+    <title>Pantomath'Bo</title>
     
     <link rel="stylesheet" href="./css/mainstyle.css" >
     <link rel="stylesheet" href="./css/fontawesome.css" >
@@ -43,6 +43,43 @@
         form > input { margin-right: 15px; }
         #chart-smile{}
         #results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
+        #myProgress {
+            width: 750px;
+            background-color: #ddd;
+        }
+
+        #myBar {
+            width: 10%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        }
+
+        .container-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 750px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        }
+
+        .card {
+        border: 1px solid #ddd;
+        }
     </style>
 </head>
 <body onload="startTime()">
@@ -120,40 +157,55 @@
                         </div>
                     </div>
                 </section>
-                <section>
-                    <!-- candidate photo -->
-                    <div id="results" >
-                        <?php 
-                            $db->sql('SELECT photo FROM pb_candidate_details WHERE c_id=' . $_GET['id']);
-                            $res = $db->getResult();
+                <section >
+                    <div class="container">
+                        <div class="container-wrapper">
+                            <!-- candidate photo -->
+                            <div id="results" class="card" >
+                                <?php 
+                                    $db->sql('SELECT photo FROM pb_candidate_details WHERE c_id=' . $_GET['id']);
+                                    $res = $db->getResult();
 
-                            $html = '<h2>Candidate Profile:</h2>' . 
-                                    '<img src="' . $res[0]["photo"] . '"/>';
-                            echo $html;
-                        ?>
+                                    $html = '<h2>Candidate Profile:</h2>' . 
+                                            '<img src="' . $res[0]["photo"] . '"/>';
+                                    echo $html;
+                                ?>
+                            </div>
+                            
+                            <!-- Interview Controls-->
+                            <div class="card">
+                                <button id="start" >start Interview</button>
+                                <button id="stop">stop Interview</button>
+                                <button id="fetch">Get Analysis</button>
+                                <div id="log">Here your log comes</div>
+                            </div>
+                        </div>
+
                     </div>
-                    
-                    <!-- Interview Controls-->
-                    <div>
-                        <button id="start" >start Interview</button>
-                        <button id="stop">stop Interview</button>
-                        <button id="fetch">Get Analysis</button>
-                        <div id="log">Here your log comes</div>
+                    <div class="container">
+                    <div class="container-wrapper">
+                        <div id="myProgress" class="card">
+                            <div id="myBar">10%</div>
+                        </div>
                     </div>
 
-                    <div class="graphs">
-                        <ul class="graph-list">
-                            <li class="graph-number">
-                                    <div id="chart-smile">
-                                    <h2 style="text-align: center">Smile Score Variation</h2>
-                                    </div>
-                            </li>
-                        </ul>
+                    <div class="container-wrapper">
+                        <div class="graphs">
+                            <ul class="graph-list">
+                                <li class="graph-number">
+                                        <div id="chart-smile">
+                                        <h2 style="text-align: center">Smile Score Variation</h2>
+                                        </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     </div>
                     
                 </section>
 
-                <section class="ratings-container" id="final_Score">                       
+                <section class="ratings-container" id="final_Score">
+
                 </section>
             </div>
         </div>
@@ -168,14 +220,21 @@
 	
     $(document).ready(function(){
         $(".graphs").hide();
+        $("#myProgress").hide();
 
         $("#start").click(function(){
             if(!started){
                 started=true;
-                
-                $.get("./backend/driver.php",{"id":1},function(data) {
+                $("#myProgress").show();
+                move();
+                $.get("./driver.php",{"id":1},function(data) {
+                    console.log(data);
                     $("#log").append("<br><p>" + data + "</p>");
-                    initiate();
+                    if(data.equals(started)==true){
+                        $("#myProgress").hide();
+                    }
+
+                   //initiate();
                 });
                 
                 initiate();
@@ -186,45 +245,31 @@
         });
 
         $("#stop").click(function(){
-            $.get("./backend/driver.php",{"id":2},function(data) {
+            $.get("./driver.php",{"id":2},function(data) {
                 
                 stop = true;
-                
                 $("#log").append("<br><p>" + data + "</p>");
                 $(".graphs").hide();
                 $(".ratings-container").show();
-                /*
+                
                 $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
                         var obj = data;
                         console.log(obj);
-                        $("#final_score").html(data);
                 });
-                */
+                
             });
         });
 
         $("#fetch").click(function(){
             $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>,"fetch":1},function(data) {
                     $("#log").html("<br><p>" + data + "</p>");
-
-                    sleepNow(2000);
-
                     var obj = data;
                     console.log(obj);
                     $("#final_score").html(data);
                 });
         });
     });
-    
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-        }
-    async function sleepNow(param) {
-    console.log('Taking a break...');
-    await sleep(param);
-    console.log(param + ' second later');
-    }
 
     function initiate(){
         console.log("setting up graph and flooding data");
@@ -262,6 +307,21 @@
 	    
         console.log("Graph setup complete");
 	 }
+
+     function move() {
+        var elem = document.getElementById("myBar");   
+        var width = 10;
+        var id = setInterval(frame, 300);
+        function frame() {
+            if (width >= 100) {
+            clearInterval(id);
+            } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = width * 1  + '%';
+            }
+        }
+    }
 
     function fetch_data() {
         console.log("Data fetch started");

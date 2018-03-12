@@ -3,7 +3,7 @@
 	header('Cache-Control: no-cache');
 
 
-	$plot_smile = fopen("./backend/data_save/plot_smile.json", "r");
+	$plot_smile = fopen("./data_save/plot_smile.json", "r");
 	$json = fgets($plot_smile);
 	$data =$json;
 	fclose($plot_smile);

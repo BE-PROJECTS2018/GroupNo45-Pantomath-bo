@@ -12,6 +12,10 @@ serverScript/class folder
 	type: localhost/front-end/  in address bar
 
 # update:
+	- Interview start Progress bar added
+	- streaming issue resolved
+	- UI modified in interview page
+	- connectivity issue resolved
 	- resume broken link resolve
 	- image format resolved
 	- concurrent video and audio processing added
@@ -43,3 +47,25 @@ open the detail page of any candidate and go to lower section. realtime analytic
 	6.	Go to Github website there you will find compare and pull-request near new branch added message
 	7.	Bingo! you did it, yeah....	
  
+ # Images
+	1. Login Area
+![Screenshot](ss/1.login_area.png)
+
+	2. Registration Page
+![Screenshot](ss/2.registration_page_1.png)
+![Screenshot](ss/2.registration_page_2.png)
+
+	2. Interview Start Page and Candidate Summary
+![Screenshot](ss/3.Interview_start_page_and_candidate_summary.png)
+
+	2. Interview page and candidates realtime analytics
+![Screenshot](ss/4.interview_page_candidate's_realtime_analytics.png)
+
+	2. Candidate Ranking page
+![Screenshot](ss/5.Candidate_Ranking_page.png)
+
+	2. Candidate details
+![Screenshot](ss/6.candidate_details_1.png)
+![Screenshot](ss/6.candidate_details_2.png)
+![Screenshot](ss/6.candidate_details_3.png)
+![Screenshot](ss/6.candidate_details_4.png)
