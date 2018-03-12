@@ -47,6 +47,12 @@
             background-color: #ddd;
         }
 
+        #analysis_results{
+            margin-bottom:0;
+            margin-top:20px;
+            text-align:center;
+        }
+
         #myBar {
             width: 10%;
             height: 30px;
@@ -77,7 +83,22 @@
         }
 
         .card {
-        border: 1px solid #ddd;
+            margin-top:10px;
+            margin-right:10px;
+            padding:5px;
+            border: 1px solid #ddd;
+        }
+
+        .rating_label{
+            background-color:#56776e;
+            color:white;
+            padding:5px;
+        }
+        hr{
+            margin:0;
+            height: 12px;
+            border: 0;
+            box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -204,7 +225,6 @@
                 </section>
 
                 <section class="ratings-container" id="final_Score">
-
                 </section>
             </div>
         </div>
@@ -262,7 +282,8 @@
                     //$("#log").html("<br><p>" + data + "</p>");
                     var obj = data;
                     console.log(obj);
-                    $(".ratings-container").html(data);
+                    var content = "<h2 id=\"analysis_results\">Analysis Results</h2><br><hr/>" + data;
+                    $(".ratings-container").html(content);
                     $(".ratings-container").show();
                 });
         });

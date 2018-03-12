@@ -55,7 +55,7 @@
                 if($key == 's_id' || $key == 'c_id')
                     continue;
                 $html .= '<div class="card">
-                    <h3>' . $key . '</h3>
+                    <h3 class="rating_label">' . str_replace("_"," ",$key) . '</h3>
                     <fieldset class="rating">';
                     
                     if($value>4.5)
