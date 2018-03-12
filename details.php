@@ -17,8 +17,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
-    <title>Blog &ndash; Layout Examples &ndash; Pure</title>
+    <meta name="description" content="New Intelligent System">
+    <title>Pantomath'Bo</title>
     
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="./bower_components/rickshaw/rickshaw.css">
