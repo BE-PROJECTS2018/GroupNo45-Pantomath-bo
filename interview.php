@@ -216,6 +216,8 @@
 	var graph=null;
     var stop=false;
     var started=false;
+    var isLastModifiedSet = false;
+    var lastModified = 0;
 	// Generate a graph
 	
     $(document).ready(function(){
@@ -226,18 +228,14 @@
             if(!started){
                 started=true;
                 $("#myProgress").show();
-                move();
+                progressBar();
                 $.get("./driver.php",{"id":1},function(data) {
+
                     console.log(data);
                     $("#log").append("<br><p>" + data + "</p>");
-                    if(data.equals(started)==true){
-                        $("#myProgress").hide();
-                    }
-
+                    
                    //initiate();
                 });
-                
-                initiate();
             }
             else{
                 alert("Backend is starting soon...");
@@ -286,17 +284,17 @@
     }
 
 	function graph_flood(){
-            console.log("graph instance created");
+        console.log("graph instance created");
 
-	        graph = new Rickshaw.Graph( {
-	        element: document.getElementById("chart-smile"),
-	        width: 600,
-	        height: 240,
-	        renderer: 'line',
-	        series: new Rickshaw.Series.Sliding([{ name: 'smile'}], undefined, {
-	            maxDataPoints: 100,
-	        })
-	    } );
+        graph = new Rickshaw.Graph( {
+        element: document.getElementById("chart-smile"),
+        width: 600,
+        height: 240,
+        renderer: 'line',
+        series: new Rickshaw.Series.Sliding([{ name: 'smile'}], undefined, {
+            maxDataPoints: 100,
+            })
+        });
 
         console.log("graph:"+graph);
 	    // Render the graph
@@ -308,10 +306,10 @@
         console.log("Graph setup complete");
 	 }
 
-     function move() {
+    function progressBar() {
         var elem = document.getElementById("myBar");   
         var width = 10;
-        var id = setInterval(frame, 300);
+        var id = setInterval(frame, 700);
         function frame() {
             if (width >= 100) {
             clearInterval(id);
@@ -345,6 +343,29 @@
                 console.log("User stopped");
             }
         }
+
+    function getBackgroundStatus() {
+        $.ajax({
+            type: "GET",
+            url: "./backgroundStatus.php",
+            success: function(e) {
+                console.log(e);
+                if(lastModified < e && isLastModifiedSet){
+                    console.log("data changed");
+                }else{
+                    lastModified = e;
+                    isLastModified = true;
+                }
+
+                if(lastModified == e){
+                    setTimeout(getBackgroundStatus,1000);
+                }else{
+                    $("#myProgress").hide();
+                    initiate();
+                }
+            }
+        });
+    }
 </script>
 </body>
 </html>
