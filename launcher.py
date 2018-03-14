@@ -81,7 +81,7 @@ def start_realTimeVideo(file):
 
                 gray_face = smile_detection.processedFace(emotion_target_size,gray,x,y,w,h)
                 emotion = smile_detection.predictEmotion(emotion_labels,emotion_classifier,gray_face)
-                cv2.putText(frame,emotion, (x, y-25),cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 1,cv2.LINE_AA)
+                #cv2.putText(frame,emotion, (x, y-25),cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 1,cv2.LINE_AA)
 
                 smileScore = smile_detection.getSmileScore(emotion_classifier,gray_face)
                 smile_detection.smileJson(t,smileScore)
@@ -95,7 +95,7 @@ def start_realTimeVideo(file):
                 # print(featureArray)
 
             out.write(frame)
-            cv2.imshow("Frame", frame)
+            #cv2.imshow("Frame", frame)
 
         featureArray = np.array(featureArray)
         print(featureArray)
@@ -107,7 +107,7 @@ def start_realTimeVideo(file):
         df.to_csv('data_save/realtime_video_cues.csv')
 
         out.release()
-        cv2.destroyAllWindows()
+        #cv2.destroyAllWindows()
         vs.stop()
         
     else:
@@ -125,7 +125,7 @@ def start_audio_capture(file):
     
     if file.exists():
         audio = pyaudio.PyAudio()
-    
+        print("Audio recording started")
         # start Recording
         stream = audio.open(format=FORMAT, channels=CHANNELS,
                         rate=RATE, input=True,
