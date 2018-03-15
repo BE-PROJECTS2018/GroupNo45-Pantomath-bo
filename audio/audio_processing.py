@@ -151,39 +151,33 @@ def drawSpectrogram(sound, dynamic_range=70):
 	plt.xlim([sound.xmin, sound.xmax])
 
 
-def start_audio(fileLogic):
-    
-    
-    if not fileLogic.exists():
-        ## write our code for video taking
-        print("starting Audio analysis")
-        global audio_row
-        data = []
-        directory = os.fsencode(os.getcwd())
-        print(directory)
-        for file in os.listdir(directory):
-            filename = os.fsdecode(file)
-            
-            if filename.endswith(".wav") or filename.endswith(".mp3"): 
-                sound = pm.Sound(filename)
-                print(filename)
-                audio_row.append(filename)
-                end_time = sound.get_total_duration()
-                audio_row.append(end_time)
-                amplitude(sound)
-                spectrum(sound)
-                intensity(sound)
-                pitch(sound)
-                formant(sound)
-                data.append(audio_row)
-                audio_row = []
-                # index +=1
-            else:
-                continue
+def start_audio():
+	## write our code for video taking
+	print("starting Audio analysis")
+	global audio_row
+	data = []
+	directory = os.fsencode(os.getcwd())
+	print(directory)
+	for file in os.listdir(directory):
+		filename = os.fsdecode(file)
+		
+		if filename.endswith(".wav") or filename.endswith(".mp3"): 
+			sound = pm.Sound(filename)
+			print(filename)
+			audio_row.append(filename)
+			end_time = sound.get_total_duration()
+			audio_row.append(end_time)
+			amplitude(sound)
+			spectrum(sound)
+			intensity(sound)
+			pitch(sound)
+			formant(sound)
+			data.append(audio_row)
+			audio_row = []
+			# index +=1
+		else:
+			continue
 
-        df = pd.DataFrame(data = data, columns = audio_Column)
-        df.to_csv('./data_save/audioCues.csv')
-        # plt.show()
-        
-    else:
-        print("Some Process in running file")
+	df = pd.DataFrame(data = data, columns = audio_Column)
+	df.to_csv('./data_save/audioCues.csv')
+	# plt.show()

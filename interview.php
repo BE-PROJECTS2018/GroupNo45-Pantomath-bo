@@ -266,18 +266,17 @@
                 
                 stop = true;
                 $("#log").append("<br><p>" + data + "</p>");
-                $(".graphs").hide();
-                
-                $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>},function(data) {
+                $(".graphs").hide();               
+            });
+        });
+
+        $("#fetch").click(function(){
+            $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>},function(data) {
                     $("#log").append("<br><p>" + data + "</p>");
                         var obj = data;
                         console.log(obj);
                 });
                 
-            });
-        });
-
-        $("#fetch").click(function(){
             $.get("./getFeatures.php",{"id":<?php echo $_GET["id"] ?>,"fetch":1},function(data) {
                     //$("#log").html("<br><p>" + data + "</p>");
                     var obj = data;
