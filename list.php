@@ -62,7 +62,7 @@
                         <a class="pure-button" href="#">List of Candidates</a>
                     </li>
                     <li class="nav-item">
-                        <a class="pure-button" href=>Nerd Statistics</a>
+                        <a class="pure-button" href="index.php">New Interview</a>
                     </li>
                     
                 </ul>
