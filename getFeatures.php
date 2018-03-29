@@ -57,6 +57,18 @@
                 $html .= '<div class="card">
                     <h3 class="rating_label">' . str_replace("_"," ",$key) . '</h3>
                     <fieldset class="rating">';
+
+                    if($key == 'Recommend_Rating' && $value>3.5){
+                        $value = 3;
+                    }else if($key == 'Overall_Rating' && $value>3.5){
+                        $value = 2.5;
+                    }else if($key == 'Not_Stressed' && $value>3.5){
+                        $value =  3;
+                    }
+
+                    if($value>4){
+                        $value -= 0.5;
+                    }
                     
                     if($value>4.5)
                         {
