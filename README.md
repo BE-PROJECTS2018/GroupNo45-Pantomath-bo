@@ -29,13 +29,12 @@ serverScript/class folder
 		- detail of the candidate is avaiable with the feature parameter
 
 # Instruction to run in realtime
-	This is not a final code
-
-	run the smile_detection.py in the any_named_folder
-open the detail page of any candidate and go to lower section. realtime analytics are viewable
+	Enter the email id of the candidate and press proceed to interview button to initiate the Interview process
+	open the detail page of any candidate and go to lower section. realtime analytics are viewable
 
 # future update:
-	analytic area doesn't fit good as graph need to be static there and types of graph are pending
+	Multiple Interview Environeent capability maybe added
+	Multiple Interview support can be added
 
 
 # Instruction for How to Contribute ?
@@ -69,3 +68,8 @@ open the detail page of any candidate and go to lower section. realtime analytic
 ![Screenshot](ss/6.candidate_details_2.png)
 ![Screenshot](ss/6.candidate_details_3.png)
 ![Screenshot](ss/6.candidate_details_4.png)
+
+# Contributors
+	Ankit Shaw [https://github.com/ankitshaw]
+	Pratik Watwani [https://github.com/pratikwatwani]
+	Swastika Thakur [https://github.com/swastika-thakur]
